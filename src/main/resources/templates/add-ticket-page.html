@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<body>
+		<form action="#" th:action="@{/ticekt/add/__${id}__}" th:object="${ticket}" method="post">
+			<table>
+				<tr>
+					<td>Price:</td>
+					<td><input type="text" th:field="*{price}" /> </td>
+					<td th:if="${#fields.hasErrors('price')}" th:errors="*{price}" > </td>
+				</tr>
+				
+				<tr>
+					<td>Is Child:</td>
+					<td><input type="checkbox" name="isChild" th:checked="${ticket.isChild}" /></td>
+				</tr>
+				
+				<tr>
+					<td> <button type="submit"> Add ticket! </button> </td>
+				</tr>
+			</table>
+			
+			
+		</form>
+			
+			
+	</body>
+
+</html>
